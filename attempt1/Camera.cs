@@ -11,7 +11,6 @@ namespace engine
 {
     public class Camera
     {
-        public static int ticks = 5;
         public Vector2 pos;
         public Vector2 screenSize;
 

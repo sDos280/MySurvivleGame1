@@ -17,7 +17,7 @@ namespace Main
             Raylib.InitWindow(width, height, "Hello World");
             Random r = new Random();
             double seed = r.NextDouble();
-            WorldMap worldMap = new WorldMap(0, new Vector2(width, height));
+            WorldMap worldMap = new WorldMap(0, width, height);
             while (!Raylib.WindowShouldClose())
             {
                 dt = Raylib.GetFrameTime();
@@ -41,6 +41,7 @@ namespace Main
                 Raylib.ClearBackground(Color.WHITE);
                 camera.drawAxis();
                 worldMap.updateChunks(camera);
+                //Console.WriteLine(worldMap.getTilePositionInChumk(camera.ScreenPointToWorldPoint(Raylib.GetMousePosition())));
                 Raylib.DrawFPS(10, 10);
                 Raylib.EndDrawing();
                 //Console.WriteLine(Raylib.GetFPS());
